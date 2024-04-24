@@ -6,7 +6,7 @@
 /*   By: ekose <ekose@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/15 16:32:47 by ekose             #+#    #+#             */
-/*   Updated: 2024/03/23 02:36:00 by ekose            ###   ########.fr       */
+/*   Updated: 2024/04/24 18:59:13 by ekose            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,11 @@ static int	ft_isdigit(int c)
 
 unsigned long	ft_get_time(void)
 {
-	struct timeval time;
-	unsigned long	now_msc;
-	if(gettimeofday(&time,NULL))
+	struct timeval	time;
+
+	if (gettimeofday(&time, NULL))
 		return (0);
-	now_msc = (time.tv_sec * 1000) + (time.tv_usec / 1000);
-	return (now_msc);
+	return ((time.tv_sec * 1000) + (time.tv_usec / 1000));
 }
 
 void	ft_usleep(unsigned long time)
@@ -37,9 +36,10 @@ void	ft_usleep(unsigned long time)
 
 	start = ft_get_time();
 	while (1)
-		if ((ft_get_time() - start) * 1000 >= (time) *1000)
+		if ((ft_get_time() - start) * 1000 >= (time) * 1000)
 			return ;
 }
+
 int	ft_atoi(const char *str)
 {
 	int	i;
@@ -64,6 +64,7 @@ int	ft_atoi(const char *str)
 	}
 	return (sign * nb);
 }
+
 void	ft_check(t_data *data, char **argv)
 {
 	int	i;

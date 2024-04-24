@@ -6,7 +6,7 @@
 /*   By: ekose <ekose@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/15 15:53:40 by ekose             #+#    #+#             */
-/*   Updated: 2024/03/24 17:04:14 by ekose            ###   ########.fr       */
+/*   Updated: 2024/04/24 17:07:44 by ekose            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@
 
 # define RED "\033[31m"
 # define YELLOW "\033[32m"
-
 
 typedef struct s_data	t_data;
 
@@ -52,7 +51,6 @@ typedef struct s_data
 	pthread_mutex_t	*wait;
 }	t_data;
 
-
 void			ft_error_1(t_data *data, char *s);
 void			ft_error2(t_data *data, char *s);
 void			ft_free(t_data *data);
@@ -62,5 +60,5 @@ void			ft_fill(t_data *data, char **argv);
 void			ft_init_mutex(t_data *data);
 int				ft_atoi(const char *str);
 unsigned long	ft_get_time(void);
-int				ft_wait(t_philo *philo, unsigned long time);
+int				ft_wait(t_philo *philo, unsigned long time, char work);
 #endif
